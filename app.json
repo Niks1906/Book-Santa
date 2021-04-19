@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "book-santa",
+    "slug": "bookSanta",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/book.png",
+    "splash": {
+      "image": "./assets/open-book.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.NR.Book_Santa",
+      "versionCode": 1,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/book.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "favicon": "./assets/book.png"
+    }
+  }
+}
