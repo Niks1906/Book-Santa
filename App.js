@@ -55,7 +55,7 @@ const TabNavigator = createBottomTabNavigator(
 
 const SwitchNavigator = createSwitchNavigator({
   Login: Authentication,
-  Tabnav: TabNavigator,
+  TabNav: TabNavigator,
 });
 
 const Appcontainer = createAppContainer(SwitchNavigator);

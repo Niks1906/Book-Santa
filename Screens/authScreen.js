@@ -9,6 +9,7 @@ import {
   KeyboardAvoidingView,
   ScrollView,
   StyleSheet,
+  Image,
 } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import * as firebase from "firebase";
@@ -95,7 +96,16 @@ export default class Authentication extends React.Component {
         <View style={styles.view}>
           <KeyboardAvoidingView>
             <ScrollView>
-              <Text>Sign Up</Text>
+              <Text
+                style={{
+                  color: "#ffd700",
+                  alignSelf: "center",
+                  margin: 25,
+                  fontWeight: "bold",
+                }}
+              >
+                Register
+              </Text>
               <TextInput
                 placeholder="Enter your name"
                 style={styles.textInput}
@@ -142,18 +152,20 @@ export default class Authentication extends React.Component {
                 }}
               />
               <TouchableOpacity
+                style={styles.touchableOpacity}
                 onPress={() => {
                   this.userSignUp();
                 }}
               >
-                <Text>Sign Up</Text>
+                <Text style={styles.touchableOpacityText}>Sign Up</Text>
               </TouchableOpacity>
               <TouchableOpacity
+                style={styles.touchableOpacity}
                 onPress={() => {
                   this.setState({ isModal: false });
                 }}
               >
-                <Text>Cancel</Text>
+                <Text style={styles.touchableOpacityText}>Cancel</Text>
               </TouchableOpacity>
             </ScrollView>
           </KeyboardAvoidingView>
@@ -168,13 +180,32 @@ export default class Authentication extends React.Component {
         style={{
           justifyContent: "center",
           alignItems: "center",
+          flex: 1,
+          backgroundColor: "#022c43",
         }}
       >
         <View>{this.showModal()}</View>
+        <Image source={require('../assets/book.png')} style={{
+          width:100,
+          height:100,
+        }} />
+        <Text
+          style={{
+            color: "#f6c90e",
+            fontWeight: "bold",
+            margin: 25,
+          }}
+        >
+          Book Santa
+        </Text>
         <TextInput
           style={{
-            backgroundColor: "yellow",
-            color: "black",
+            backgroundColor: "#e1e099",
+            borderWidth: 2,
+            borderColor: "#4ecca3",
+            padding: 10,
+            margin: 10,
+            width: "75%",
           }}
           placeholder="E-mail"
           onChangeText={(text) => {
@@ -183,8 +214,12 @@ export default class Authentication extends React.Component {
         />
         <TextInput
           style={{
-            backgroundColor: "yellow",
-            color: "black",
+            backgroundColor: "#e1e099",
+            borderWidth: 2,
+            borderColor: "#4ecca3",
+            padding: 10,
+            margin: 10,
+            width: "75%",
           }}
           placeholder="Password"
           onChangeText={(text) => {
@@ -194,18 +229,20 @@ export default class Authentication extends React.Component {
         />
 
         <TouchableOpacity
+          style={styles.touchableOpacity}
           onPress={() => {
             this.logIn();
           }}
         >
-          <Text>Log In</Text>
+          <Text style={styles.touchableOpacityText}>Log In</Text>
         </TouchableOpacity>
         <TouchableOpacity
+          style={styles.touchableOpacity}
           onPress={() => {
             this.setState({ isModal: true });
           }}
         >
-          <Text>Sign Up</Text>
+          <Text style={styles.touchableOpacityText}>Sign Up</Text>
         </TouchableOpacity>
       </SafeAreaView>
     );
@@ -216,13 +253,30 @@ const styles = StyleSheet.create({
   textInput: {
     margin: 10,
     padding: 10,
-    backgroundColor: "yellow",
+    backgroundColor: "#e1e099",
     borderWidth: 2,
-    borderColor: "brown",
+    borderColor: "#4ecca3",
   },
   view: {
     flex: 1,
-    backgroundColor: 'black',
-    margin:30,
-  }
+    backgroundColor: "#022c43",
+    margin: 30,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  touchableOpacity: {
+    backgroundColor: "#cbaf87",
+    margin: 10,
+    padding: 10,
+    borderWidth: 2,
+    borderColor: "#7045af",
+    borderRadius: 20,
+    width: "50%",
+    justifyContent: "center",
+    alignItems: "center",
+    alignSelf: "center",
+  },
+  touchableOpacityText: {
+    color: "#0d7377",
+  },
 });
