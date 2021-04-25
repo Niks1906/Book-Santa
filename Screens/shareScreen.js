@@ -10,6 +10,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import * as firebase from "firebase";
 import db from "../config";
 import { ListItem } from "react-native-elements";
+import Headers from "../components/headers";
 
 export default class Share extends React.Component {
   constructor() {
@@ -18,7 +19,7 @@ export default class Share extends React.Component {
   }
 
   getRequests = () => {
-    db.collection("requests").onSnapshot((snapshot) => {
+    db.collection("request").onSnapshot((snapshot) => {
       var bookList = snapshot.docs.map((doc) => doc.data());
       this.setState({ requestedBooks: bookList });
     });
@@ -28,13 +29,12 @@ export default class Share extends React.Component {
     this.getRequests();
   }
 
+  keyExtractor = (item, index) => index.toString();
+
   renderItem = ({ item, i }) => {
     return (
-      <ListItem key={i} bottomDivider={true}>
-        <ListItem.Content>
-          <ListItem.Title>{item.bookName}</ListItem.Title>
-          <ListItem.Subtitle>{item.bookReason}</ListItem.Subtitle>
-        </ListItem.Content>
+      <ListItem bottomDivider={true} style={{}}>
+        <Text>{item.bookName}</Text>
       </ListItem>
     );
   };
@@ -44,25 +44,28 @@ export default class Share extends React.Component {
       <SafeAreaView
         style={{
           flex: 1,
-          backgroundColor: "#2B2B2B",
+          backgroundColor: "#29435c",
           justifyContent: "center",
           alignItems: "center",
         }}
       >
+        <Headers title="Donate Book" navigation={this.props.navigation} />
         {this.state.requestedBooks.length === 0 ? (
           <View>
-            <Text>List of all requested books</Text>
+            <Text style={{ color: "#d1d4c9" }}>
+              List of all requested books
+            </Text>
           </View>
         ) : (
-          <FlatList
-            data={this.state.requestedBooks}
-            renderItem={this.renderItem}
-            keyExtractor={this.keyExtractor}
-          />
+          <View>
+            <FlatList
+              data={this.state.requestedBooks}
+              renderItem={this.renderItem}
+              keyExtractor={this.keyExtractor}
+            />
+          </View>
         )}
       </SafeAreaView>
     );
   }
 }
-
-const styles = StyleSheet.create({});

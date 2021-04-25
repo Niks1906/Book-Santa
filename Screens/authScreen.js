@@ -185,7 +185,7 @@ export default class Authentication extends React.Component {
         }}
       >
         <View>{this.showModal()}</View>
-        <Image source={require('../assets/book.png')} style={{
+        <Image source={require('../assets/storytelling.png')} style={{
           width:100,
           height:100,
         }} />

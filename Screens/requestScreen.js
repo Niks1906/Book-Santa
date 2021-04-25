@@ -10,6 +10,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import * as firebase from "firebase";
 import db from "../config";
+import Headers from "../components/headers";
 
 export default class Request extends React.Component {
   constructor() {
@@ -38,33 +39,65 @@ export default class Request extends React.Component {
       <SafeAreaView
         style={{
           flex: 1,
-          backgroundColor: "#2B2B2B",
+          backgroundColor: "#29435c",
           justifyContent: "center",
           alignItems: "center",
         }}
       >
-        <TextInput
-          placeholder="Enter name of book"
-          value={this.state.bookName}
-          onChangeText={(text) => {
-            this.setState({ bookName: text });
-          }}
-        />
-        <TextInput
-          placeholder="Why you want the book"
-          value={this.state.bookReason}
-          multiline={true}
-          onChangeText={(text) => {
-            this.setState({ bookReason: text });
-          }}
-        />
-        <TouchableOpacity
-          onPress={() => {
-            this.addRequest();
-          }}
-        >
-          <Text>Submit</Text>
-        </TouchableOpacity>
+        <View>
+          <Headers title="Request Book" navigation={this.props.navigation} />
+          <TextInput
+            style={{
+              color: "#d1d4c9",
+              borderWidth: 2,
+              borderColor: "#556e53",
+              margin: 10,
+              padding: 10,
+              backgroundColor: "#00adb5",
+              width: "75%",
+            }}
+            placeholder="Enter name of book"
+            value={this.state.bookName}
+            onChangeText={(text) => {
+              this.setState({ bookName: text });
+            }}
+          />
+          <TextInput
+            style={{
+              color: "#d1d4c9",
+              borderWidth: 2,
+              borderColor: "#556e53",
+              margin: 10,
+              padding: 10,
+              backgroundColor: "#00adb5",
+              width: "75%",
+            }}
+            placeholder="Why you want the book"
+            value={this.state.bookReason}
+            multiline={true}
+            onChangeText={(text) => {
+              this.setState({ bookReason: text });
+            }}
+          />
+          <TouchableOpacity
+            style={{
+              backgroundColor: "#3a4750",
+              margin: 10,
+              padding: 10,
+              borderWidth: 2,
+              borderRadius: 20,
+              borderColor: "#f6c90e",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "50%",
+            }}
+            onPress={() => {
+              this.addRequest();
+            }}
+          >
+            <Text style={{ color: "#f6c90e" }}>Submit</Text>
+          </TouchableOpacity>
+        </View>
       </SafeAreaView>
     );
   }
