@@ -40,12 +40,16 @@ export default class Request extends React.Component {
         style={{
           flex: 1,
           backgroundColor: "#29435c",
-          justifyContent: "center",
           alignItems: "center",
         }}
       >
-        <View>
-          <Headers title="Request Book" navigation={this.props.navigation} />
+        <Headers title="Request Book" navigation={this.props.navigation} />
+
+        <View
+          style={{
+            alignItems: "center",
+          }}
+        >
           <TextInput
             style={{
               color: "#d1d4c9",

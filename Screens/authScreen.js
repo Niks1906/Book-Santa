@@ -40,7 +40,7 @@ export default class Authentication extends React.Component {
           .signInWithEmailAndPassword(email, password)
           .then(() => {
             Alert.alert("Login Successful");
-            this.props.navigation.navigate("TabNav");
+            this.props.navigation.navigate("Share");
           });
       } catch (error) {
         var errorCode = error.code;
@@ -126,7 +126,6 @@ export default class Authentication extends React.Component {
                 onChangeText={(text) => {
                   this.setState({ contact: text });
                 }}
-                keyboardType="number"
               />
               <TextInput
                 placeholder="Enter your e-mail id"
@@ -185,10 +184,13 @@ export default class Authentication extends React.Component {
         }}
       >
         <View>{this.showModal()}</View>
-        <Image source={require('../assets/storytelling.png')} style={{
-          width:100,
-          height:100,
-        }} />
+        <Image
+          source={require("../assets/storytelling.png")}
+          style={{
+            width: 100,
+            height: 100,
+          }}
+        />
         <Text
           style={{
             color: "#f6c90e",

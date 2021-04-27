@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from "react-navigation-tabs";
 import Request from "./Screens/requestScreen";
 import Share from "./Screens/shareScreen";
 import Authentication from "./Screens/authScreen";
+import { AppDrawer } from "./components/drawerNav";
 
 export default class App extends React.Component {
   render() {
@@ -12,50 +13,9 @@ export default class App extends React.Component {
   }
 }
 
-const TabNavigator = createBottomTabNavigator(
-  {
-    Share: { screen: Share },
-    Request: { screen: Request },
-  },
-  {
-    defaultNavigationOptions: ({ navigation }) => ({
-      tabBarIcon: () => {
-        const route = navigation.state.routeName;
-        if (route === "Share") {
-          return (
-            <Image
-              source={require("./assets/share.png")}
-              style={{
-                width: 25,
-                height: 25,
-              }}
-            />
-          );
-        } else if (route === "Request") {
-          return (
-            <Image
-              source={require("./assets/request.png")}
-              style={{
-                width: 25,
-                height: 25,
-              }}
-            />
-          );
-        }
-      },
-    }),
-    tabBarOptions: {
-      style: {
-        backgroundColor: "#152a38",
-      },
-      activeBackgroundColor: "#556e53",
-    },
-  }
-);
-
 const SwitchNavigator = createSwitchNavigator({
   Login: Authentication,
-  TabNav: TabNavigator,
+  Drawer: AppDrawer,
 });
 
 const Appcontainer = createAppContainer(SwitchNavigator);
