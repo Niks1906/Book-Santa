@@ -6,6 +6,7 @@ import Request from "./Screens/requestScreen";
 import Share from "./Screens/shareScreen";
 import Authentication from "./Screens/authScreen";
 import { AppDrawer } from "./components/drawerNav";
+import RecieverDetails from "./Screens/recieverDetails";
 
 export default class App extends React.Component {
   render() {
@@ -16,6 +17,7 @@ export default class App extends React.Component {
 const SwitchNavigator = createSwitchNavigator({
   Login: Authentication,
   Drawer: AppDrawer,
+  RecieverDetails: RecieverDetails,
 });
 
 const Appcontainer = createAppContainer(SwitchNavigator);

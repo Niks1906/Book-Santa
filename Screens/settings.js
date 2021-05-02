@@ -60,22 +60,40 @@ export default class Settings extends React.Component {
       <SafeAreaView
         style={{
           flex: 1,
-          backgroundColor: "#29435c",
+          backgroundColor: "#393e46",
           alignItems: "center",
         }}
       >
         <Headers title="Settings" navigation={this.props.navigation} />
-        <Text>{this.state.name}</Text>
-        <Text>{this.state.email}</Text>
-        <TextInput
+        <Text
           style={{
-            color: "#d1d4c9",
-            borderWidth: 2,
-            borderColor: "#556e53",
             margin: 10,
             padding: 10,
             backgroundColor: "#00adb5",
+            color: "#eeeeee",
+          }}
+        >
+          {this.state.name}
+        </Text>
+        <Text
+          style={{
+            margin: 10,
+            padding: 10,
+            backgroundColor: "#00adb5",
+            color: "#eeeeee",
+          }}
+        >
+          {this.state.email}
+        </Text>
+        <TextInput
+          style={{
+            backgroundColor: "#00adb5",
+            borderWidth: 2,
+            borderColor: "#222831",
+            padding: 10,
+            margin: 10,
             width: "75%",
+            color: "white",
           }}
           value={this.state.address}
           onChangeText={(text) => {
@@ -84,13 +102,13 @@ export default class Settings extends React.Component {
         />
         <TextInput
           style={{
-            color: "#d1d4c9",
-            borderWidth: 2,
-            borderColor: "#556e53",
-            margin: 10,
-            padding: 10,
             backgroundColor: "#00adb5",
+            borderWidth: 2,
+            borderColor: "#222831",
+            padding: 10,
+            margin: 10,
             width: "75%",
+            color: "white",
           }}
           value={this.state.contact}
           onChangeText={(text) => {
@@ -99,15 +117,14 @@ export default class Settings extends React.Component {
         />
         <TouchableOpacity
           style={{
-            backgroundColor: "#3a4750",
+            backgroundColor: "#f9ed69",
             margin: 10,
             padding: 10,
             borderWidth: 2,
+            borderColor: "#6a2c70",
             borderRadius: 20,
-            borderColor: "#f6c90e",
-            alignItems: "center",
             justifyContent: "center",
-            width: "50%",
+            alignItems: "center",
           }}
           onPress={() => {
             Alert.alert(
@@ -130,7 +147,7 @@ export default class Settings extends React.Component {
             );
           }}
         >
-          <Text style={{ color: "#f6c90e" }}>Save Changes</Text>
+          <Text style={{ color: "#b83b5e" }}>Save Changes</Text>
         </TouchableOpacity>
       </SafeAreaView>
     );

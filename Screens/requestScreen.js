@@ -39,7 +39,7 @@ export default class Request extends React.Component {
       <SafeAreaView
         style={{
           flex: 1,
-          backgroundColor: "#29435c",
+          backgroundColor: "#393e46",
           alignItems: "center",
         }}
       >
@@ -52,9 +52,9 @@ export default class Request extends React.Component {
         >
           <TextInput
             style={{
-              color: "#d1d4c9",
+              color: "#222831",
               borderWidth: 2,
-              borderColor: "#556e53",
+              borderColor: "#eeeeee",
               margin: 10,
               padding: 10,
               backgroundColor: "#00adb5",
@@ -68,9 +68,9 @@ export default class Request extends React.Component {
           />
           <TextInput
             style={{
-              color: "#d1d4c9",
+              color: "#222831",
               borderWidth: 2,
-              borderColor: "#556e53",
+              borderColor: "#eeeeee",
               margin: 10,
               padding: 10,
               backgroundColor: "#00adb5",
@@ -85,12 +85,12 @@ export default class Request extends React.Component {
           />
           <TouchableOpacity
             style={{
-              backgroundColor: "#3a4750",
+              backgroundColor: "#f9ed69",
               margin: 10,
               padding: 10,
               borderWidth: 2,
               borderRadius: 20,
-              borderColor: "#f6c90e",
+              borderColor: "#6a2c70",
               alignItems: "center",
               justifyContent: "center",
               width: "50%",
@@ -99,7 +99,7 @@ export default class Request extends React.Component {
               this.addRequest();
             }}
           >
-            <Text style={{ color: "#f6c90e" }}>Submit</Text>
+            <Text style={{ color: "#b83b5e" }}>Submit</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>

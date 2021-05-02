@@ -1,9 +1,5 @@
 import * as React from "react";
-import {
-  View,
-  Text,
-  FlatList,
-} from "react-native";
+import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import * as firebase from "firebase";
 import db from "../config";
@@ -31,8 +27,39 @@ export default class Share extends React.Component {
 
   renderItem = ({ item, i }) => {
     return (
-      <ListItem bottomDivider={true} style={{}}>
-        <Text>{item.bookName}</Text>
+      <ListItem
+        bottomDivider={true}
+        style={{
+          flex: 1,
+          marginTop: 5,
+          padding: 5,
+          width: 300,
+        }}
+      >
+        <Text
+          style={{
+            margin: 5,
+            color: "#00adb5",
+          }}
+        >
+          {item.bookName}
+        </Text>
+        <TouchableOpacity
+          style={{
+            marginLeft: 100,
+          }}
+          onPress={() => {
+            this.props.navigation.navigate("RecieverDetails", {"details": item});
+          }}
+        >
+          <Text
+            style={{
+              color: "#222831",
+            }}
+          >
+            View Details
+          </Text>
+        </TouchableOpacity>
       </ListItem>
     );
   };
@@ -42,8 +69,7 @@ export default class Share extends React.Component {
       <SafeAreaView
         style={{
           flex: 1,
-          backgroundColor: "#29435c",
-          justifyContent: "center",
+          backgroundColor: "#393e46",
           alignItems: "center",
         }}
       >

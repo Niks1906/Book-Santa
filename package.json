@@ -27,7 +27,8 @@
     "react-native-web": "~0.13.12",
     "react-navigation": "*",
     "react-navigation-drawer": "^2.7.1",
-    "react-navigation-tabs": "*"
+    "react-navigation-tabs": "*",
+    "reanimated": "^0.0.1-alpha"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0"

@@ -180,7 +180,7 @@ export default class Authentication extends React.Component {
           justifyContent: "center",
           alignItems: "center",
           flex: 1,
-          backgroundColor: "#022c43",
+          backgroundColor: "#393e46",
         }}
       >
         <View>{this.showModal()}</View>
@@ -202,12 +202,13 @@ export default class Authentication extends React.Component {
         </Text>
         <TextInput
           style={{
-            backgroundColor: "#e1e099",
+            backgroundColor: "#00adb5",
             borderWidth: 2,
-            borderColor: "#4ecca3",
+            borderColor: "#eeeeee",
             padding: 10,
             margin: 10,
             width: "75%",
+            color: "white",
           }}
           placeholder="E-mail"
           onChangeText={(text) => {
@@ -216,12 +217,13 @@ export default class Authentication extends React.Component {
         />
         <TextInput
           style={{
-            backgroundColor: "#e1e099",
+            backgroundColor: "#00adb5",
             borderWidth: 2,
-            borderColor: "#4ecca3",
+            borderColor: "#eeeeee",
             padding: 10,
             margin: 10,
             width: "75%",
+            color: "white",
           }}
           placeholder="Password"
           onChangeText={(text) => {
@@ -253,25 +255,28 @@ export default class Authentication extends React.Component {
 
 const styles = StyleSheet.create({
   textInput: {
-    margin: 10,
-    padding: 10,
-    backgroundColor: "#e1e099",
+    backgroundColor: "#00adb5",
     borderWidth: 2,
-    borderColor: "#4ecca3",
+    borderColor: "#eeeeee",
+    padding: 10,
+    margin: 10,
+    width: "100%",
+    color: "white",
+    alignSelf: "center",
   },
   view: {
     flex: 1,
-    backgroundColor: "#022c43",
-    margin: 30,
+    backgroundColor: "#222831",
+    margin: 10,
     justifyContent: "center",
     alignItems: "center",
   },
   touchableOpacity: {
-    backgroundColor: "#cbaf87",
+    backgroundColor: "#f9ed69",
     margin: 10,
     padding: 10,
     borderWidth: 2,
-    borderColor: "#7045af",
+    borderColor: "#6a2c70",
     borderRadius: 20,
     width: "50%",
     justifyContent: "center",
@@ -279,6 +284,6 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   touchableOpacityText: {
-    color: "#0d7377",
+    color: "#b83b5e",
   },
 });

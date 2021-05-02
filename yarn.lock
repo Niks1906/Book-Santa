@@ -11137,6 +11137,11 @@ readdirp@~3.5.0:
   dependencies:
     picomatch "^2.2.1"
 
+reanimated@^0.0.1-alpha:
+  version "0.0.1-alpha"
+  resolved "https://registry.yarnpkg.com/reanimated/-/reanimated-0.0.1-alpha.tgz#a71404e3e5b8b8eccdcab4149a9a71f300a7c0d1"
+  integrity sha512-lKH4enmYDhBlhhvjveXRP/p9U2A2oTFnTnU5UmB8Doy2WNqAc7UFdYEe4HF3CWAT2+0DBH91tcIpGOfyNza13w==
+
 recursive-readdir@2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/recursive-readdir/-/recursive-readdir-2.2.2.tgz#9946fb3274e1628de6e36b2f6714953b4845094f"

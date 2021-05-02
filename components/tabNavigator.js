@@ -40,7 +40,7 @@ export const TabNavigator = createBottomTabNavigator(
       style: {
         backgroundColor: "#152a38",
       },
-      activeBackgroundColor: "#556e53",
+      activeBackgroundColor: "#eeeeee",
     },
   }
 );
